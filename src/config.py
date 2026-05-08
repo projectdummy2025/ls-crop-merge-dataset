@@ -12,6 +12,7 @@ DATA_FILES = [
 
 # Column standardization map
 RENAME_MAP = {
+    'N': 'n', 'P': 'p', 'K': 'k',
     'Nitrogen': 'n', 'Phosphorous': 'p', 'Potassium': 'k',
     'Temperature': 'temperature', 'Humidity': 'humidity',
     'PH': 'ph', 'Rainfall': 'rainfall', 'Crop': 'label'

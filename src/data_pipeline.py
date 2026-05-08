@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from src.config import DATA_FILES, RENAME_MAP, COMMON_COLS
 
 class DatasetMerger:
@@ -15,11 +16,10 @@ class DatasetMerger:
                 df = pd.read_csv(file_path)
                 print(f"Dataset {i+1}: {len(df)} baris dimuat dari {file_path}")
                 
-                # Standarisasi kolom jika file kedua (Crop_recommendation-2.csv)
-                # Dalam list kita, index 1 adalah file kedua
-                if i == 1:
-                    df = df.rename(columns=RENAME_MAP)
+                # Standarisasi kolom menggunakan RENAME_MAP untuk semua file
+                df = df.rename(columns=RENAME_MAP)
                 
+                # Pastikan hanya mengambil kolom yang dibutuhkan
                 dfs.append(df[COMMON_COLS])
         except Exception as e:
             print(f"Gagal memuat file: {e}")
@@ -54,6 +54,9 @@ class DatasetMerger:
 
     def save(self, output_path='data/merged_crop_recommendation.csv'):
         if self.merged_df is not None:
+            # Pastikan direktori tujuan ada
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            
             self.merged_df.to_csv(output_path, index=False)
             print(f"\nDataset berhasil disimpan di: {output_path}")
         else:
