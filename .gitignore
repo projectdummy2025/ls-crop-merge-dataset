@@ -10,7 +10,7 @@ __pycache__/
 *$py.class
 
 # Data Artifacts
-output/merged_crop_data.csv
+output/
 
 # IDEs
 .vscode/

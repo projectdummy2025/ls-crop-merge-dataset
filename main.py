@@ -12,7 +12,7 @@ def main():
     merger.execute()
     
     # Simpan hasil akhir ke CSV
-    merger.save('output/merged_crop_data.csv')
+    merger.save('output/crop_dataset.csv')
 
 if __name__ == "__main__":
     main()
