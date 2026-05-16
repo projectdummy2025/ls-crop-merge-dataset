@@ -22,6 +22,12 @@ A professional Python tool to merge and standardize agricultural datasets for Cr
 - **Automated Cleaning**: Handles duplicate records and provides median imputation for missing values.
 - **Production-Ready**: Modular structure built for scalability and maintainability.
 
+## Dataset Sources
+
+This project consolidates data from the following Kaggle repositories:
+- **Source 1**: [Crop Recommendation Dataset (Jitesh Sharma)](https://www.kaggle.com/datasets/jiteshsharma45/crop-recommendation)
+- **Source 2**: [Crop Recommendation Dataset (Nishchal Chandel)](https://www.kaggle.com/datasets/nishchalchandel/crop-recommendation)
+
 ## Getting Started
 
 ### 1. Prerequisites
